@@ -11,7 +11,7 @@ export default function Navbar() {
                   class="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
                   href="#"
                 >
-                  Brand
+                  BEEMORE
                 </a>
               </div>
 
@@ -33,6 +33,7 @@ export default function Navbar() {
 
             <div class="flex-1 md:flex md:items-center md:justify-between">
               <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
+              <input type="text" id="email-adress-icon" class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..."/>
                 <a
                   href="#"
                   class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"

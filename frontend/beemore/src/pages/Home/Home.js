@@ -12,7 +12,7 @@ export default function Home() {
         <div class="basis-1/2 ">
           <ListPost/>
         </div>
-        <div class="basis-1/4 hidden md:block ">03</div>
+        <div class="basis-1/4 hidden md:block ">Thanh công cụ</div>
       </div>
     </MainLayout>
   );
