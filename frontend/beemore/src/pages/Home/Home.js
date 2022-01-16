@@ -1,6 +1,7 @@
 import MainLayout from "../../components/Layout";
 import Sidebar from "../../components/Sidebar";
 import ListPost from "../../components/ListPost";
+// import News from "../../components/News";
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
           <Sidebar />
         </div>
         <div class="basis-1/2 ">
-          <ListPost/>
+          {/* <News /> */}
+          <ListPost />
         </div>
         <div class="basis-3/8 hidden md:block ">Thanh công cụ</div>
       </div>

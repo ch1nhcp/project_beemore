@@ -1,94 +1,75 @@
-import { LockClosedIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
     <>
-      <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
-          <div>
-            <h1 className="mt-6 text-center text-3xl font-extrabold text-yellow-500">
-              BEEMORE
+      <section class="h-full content-center ">
+        <div class="px-4 py-20 mx-auto max-w-7xl ">
+          <a
+            href="/"
+            title="Beemore Home Page"
+            class="flex items-center justify-start sm:justify-center"
+          >
+            <a href="/" title="Go to Beemore Home Page">
+              <span class=" text-xl font-medium text-center text-amber-400 md:text-5xl">
+                Bee
+              </span>
+              <span class=" text-xl font-medium text-center text-gray-600 md:text-5xl">
+                more
+              </span>
+              <span class="sr-only">Beemore Home Page</span>
+            </a>
+            <span class="sr-only">Beemore</span>
+          </a>
+          <div class="w-full px-0 pt-5 pb-6 mx-auto mt-4 mb-0 space-y-4 bg-transparent border-0 border-gray-200 rounded-lg md:bg-white md:border sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 md:px-6 sm:mt-8 sm:mb-5">
+            <h1 class="mb-5 text-xl font-light text-left text-gray-800 sm:text-center">
+              Log in to your account
             </h1>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-              Sign in to your account
-            </h2>
-          </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
-            <input type="hidden" name="remember" defaultValue="true" />
-            <div className="rounded-md shadow-sm -space-y-px">
-              <div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  placeholder="Email address"
-                />
-              </div>
-              <div>
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                  placeholder="Password"
-                />
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-                />
-                <label
-                  htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-900"
-                >
-                  Remember me
-                </label>
-              </div>
-
-              <div className="text-sm">
-                <a
-                  href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                  Forgot your password?
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                  <LockClosedIcon
-                    className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
-                    aria-hidden="true"
-                  />
+            <form class="pb-1 space-y-4">
+              <label class="block">
+                <span class="block mb-1 text-xs font-medium text-gray-700">
+                  Your Email
                 </span>
-                Sign in
-              </button>
-            </div>
-          </form>
+                <input
+                  class="form-input"
+                  type="email"
+                  placeholder="Ex. james@bond.com"
+                  inputmode="email"
+                  required
+                />
+              </label>
+              <label class="block">
+                <span class="block mb-1 text-xs font-medium text-gray-700">
+                  Your Password
+                </span>
+                <input
+                  class="form-input"
+                  type="password"
+                  placeholder="••••••••"
+                  required
+                />
+              </label>
+              <div class="flex items-center justify-between">
+                <label class="flex items-center">
+                  <input type="checkbox" class="form-checkbox" />
+                  <span class="block ml-2 text-xs font-medium text-gray-700 cursor-pointer">
+                    Remember me
+                  </span>
+                </label>
+                <input type="submit" class="btn btn-primary" value="Login" />
+              </div>
+            </form>
+          </div>
+          <p class="mb-4 space-y-2 text-sm text-left text-gray-600 sm:text-center sm:space-y-0">
+            <a href="#" class="w-full btn btn-sm btn-link sm:w-auto">
+              Forgot password
+            </a>
+            <Link to="/register" class="w-full btn btn-sm btn-link sm:w-auto">
+              Create an account
+            </Link>
+          </p>
         </div>
-      </div>
+      </section>
     </>
   );
 }
