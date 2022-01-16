@@ -6,13 +6,13 @@ export default function Home() {
   return (
     <MainLayout>
       <div class="flex flex-row ">
-        <div class="basis-1/4 hidden md:block">
+        <div class="basis-1/8 hidden md:block">
           <Sidebar />
         </div>
         <div class="basis-1/2 ">
           <ListPost/>
         </div>
-        <div class="basis-1/4 hidden md:block ">Thanh công cụ</div>
+        <div class="basis-3/8 hidden md:block ">Thanh công cụ</div>
       </div>
     </MainLayout>
   );
