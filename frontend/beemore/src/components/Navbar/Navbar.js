@@ -1,108 +1,61 @@
-import "./Navbar.css";
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <>
-      <nav class="bg-white shadow dark:bg-gray-800">
-        <div class="container px-6 py-4 mx-auto">
-          <div class="md:flex md:items-center md:justify-between">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-semibold text-gray-700">
-                <a
-                  class="text-2xl font-bold text-gray-800 transition-colors duration-200 transform dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300"
-                  href="/"
-                >
-                  BEEMORE
-                </a>
-              </div>
-
-              <div class="flex md:hidden">
-                <button
-                  type="button"
-                  class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
-                  aria-label="toggle menu"
-                >
-                  <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                    <path
-                      fill-rule="evenodd"
-                      d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="flex-1 md:flex md:items-center md:justify-between">
-              <div class="flex flex-col -mx-4 md:flex-row md:items-center md:mx-8">
-              <input type="text" id="email-adress-icon" class="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..."/>
-                <a
-                  href="#"
-                  class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"
-                >
-                  Join Slack
-                </a>
-                <a
-                  href="#"
-                  class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"
-                >
-                  Browse Topics
-                </a>
-                <a
-                  href="#"
-                  class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"
-                >
-                  Random Item
-                </a>
-                <a
-                  href="#"
-                  class="px-2 py-1 mx-2 mt-2 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded-md md:mt-0 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"
-                >
-                  Experts
-                </a>
-              </div>
-
-              <div class="flex items-center mt-4 md:mt-0">
-                <button
-                  class="hidden mx-4 text-gray-600 transition-colors duration-200 transform md:block dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 focus:text-gray-700 dark:focus:text-gray-400 focus:outline-none"
-                  aria-label="show notifications"
-                >
+      <header class="text-gray-600 body-font bg-gray-100 border-0">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <Link
+            to="/"
+            class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+          >
+            <span class="ml-3 text-xl">BEEMORE</span>
+          </Link>
+          <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+            <div class="hidden mx-10 md:block">
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                   <svg
-                    class="w-6 h-6"
+                    class="w-5 h-5 text-gray-400"
                     viewBox="0 0 24 24"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
+                      d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
                       stroke="currentColor"
                       stroke-width="2"
                       stroke-linecap="round"
                       stroke-linejoin="round"
-                    />
+                    ></path>
                   </svg>
-                </button>
+                </span>
 
-                <button
-                  type="button"
-                  class="flex items-center focus:outline-none"
-                  aria-label="toggle profile dropdown"
-                >
-                  <div class="w-8 h-8 overflow-hidden border-2 border-gray-400 rounded-full">
-                    <img
-                      src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                      class="object-cover w-full h-full"
-                      alt="avatar"
-                    />
-                  </div>
-
-                  <h3 class="mx-2 text-sm font-medium text-gray-700 dark:text-gray-200 md:hidden">
-                    Chinhcp
-                  </h3>
-                </button>
+                <input
+                  type="text"
+                  class="w-full py-2 pl-10 pr-4 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+                  placeholder="Search"
+                />
               </div>
+            </div>
+          </nav>
+          <div class="inline-flex items-center  py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
+            <div class="flex items-center py-2 -mx-1 md:mx-0">
+              <Link
+                to="/login"
+                class="block w-1/2 px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-gray-500 rounded-md hover:bg-blue-600 md:mx-2 md:w-auto"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                class="block w-1/2 px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 md:mx-0 md:w-auto"
+              >
+                Join free
+              </Link>
             </div>
           </div>
         </div>
-      </nav>
+      </header>
     </>
   );
 }
