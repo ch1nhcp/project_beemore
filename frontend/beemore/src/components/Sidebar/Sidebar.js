@@ -4,8 +4,43 @@ export default function Sidebar() {
       <div className="flex flex-col w-64 h-screen px-4 bg-white border-lg dark:bg-gray-800 dark:border-gray-600 shadow">
         <div className="flex flex-col justify-between flex-1 mt-6">
           <nav>
+            <fieldset className="w-full space-y-1 text-coolGray-800">
+              <label for="Search" className="hidden">
+                Search
+              </label>
+              <div className="relative">
+                <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+                  <button
+                    type="button"
+                    title="search"
+                    className="p-1 focus:outline-none focus:ring"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#000000"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                  </button>
+                </span>
+                <input
+                  type="search"
+                  name="Search"
+                  placeholder="Search..."
+                  className="py-2 pl-12 rounded-md sm:w-auto border-2 focus:outline-none bg-coolGray-100 text-coolGray-800 focus:bg-coolGray-50 focus:border-blue-600"
+                />
+              </div>
+            </fieldset>
             <a
-              className="flex items-center px-4 py-2 text-gray-700 bg-gray-200 rounded-md dark:bg-gray-700 dark:text-gray-200"
+              className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
               href="#"
             >
               <svg
@@ -162,8 +197,8 @@ export default function Sidebar() {
           <hr />
           <div className="flex flex-col items-center p-8 rounded-md w-50 sm:px-12 bg-coolGray-50 text-coolGray-800">
             <div className="text-center">
-              <h2 className="text-xl font-semibold">Dubai</h2>
-              <p className="text-sm text-coolGray-600">July 29</p>
+              <h2 className="text-xl font-semibold">Hanoi</h2>
+              <p className="text-sm text-coolGray-600">August 28</p>
             </div>
             <svg
               xmlns="http://www.w3.org/2000/svg"

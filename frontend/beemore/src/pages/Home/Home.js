@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import ListPost from "../../components/ListPost";
 import Rank from "../../components/Rank";
 import News from "../../components/News";
+import CarouselCard from "../../components/CarouselCard";
 import { Link } from "react-router-dom";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         </div>
         <div class="basis-2/3 ">
           <News />
+          {/* <CarouselCard /> */}
           <ListPost />
         </div>
         <div class="basis-1/6 hidden md:block items-center justify-center">
