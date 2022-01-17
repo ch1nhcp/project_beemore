@@ -3,7 +3,7 @@ export default function ListPost() {
     <>
       <section class="text-gray-600 body-font" >
         <div class="container px-5 py-24 mx-auto">
-        <h1>Blogs </h1>
+        <h2 class="text-2xl font-extrabold text-gray-700">BLOGS</h2>
           <div class="flex flex-wrap ">
             <div class="p-4 md:w-1/3">
               <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">

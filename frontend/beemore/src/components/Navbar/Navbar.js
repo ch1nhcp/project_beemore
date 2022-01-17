@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <>
-      <header className="text-gray-600 body-font bg-blue-100 border-0">
+      <header className="text-gray-600 body-font border-0 shadow-md">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link
             to="/"
             className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
           >
-            <span className=" text-xl font-bold">BEEMORE</span>
+            <span className=" text-2xl font-bold">BEEMORE</span>
           </Link>
 
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
@@ -44,13 +44,13 @@ export default function Navbar() {
             <div className="flex items-center py-2 -mx-1 md:mx-0">
               <Link
                 to="/login"
-                className="block w-1/2 px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-gray-500 rounded-md hover:bg-blue-600 md:mx-2 md:w-auto"
+                className="block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-blue-500 transition-colors duration-200 transform rounded-md hover:bg-blue-600 md:mx-2 md:w-auto"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="block w-1/2 px-3 py-2 mx-1 text-sm font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 md:mx-0 md:w-auto"
+                className="block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 md:mx-0 md:w-auto"
               >
                 Join free
               </Link>

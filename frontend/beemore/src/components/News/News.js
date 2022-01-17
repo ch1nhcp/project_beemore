@@ -3,7 +3,7 @@ export default function News() {
     <>
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mt-12 mb-12">
         <article>
-          <h2 class="text-2xl font-extrabold text-gray-900">OUR COURSES</h2>
+          <h2 class="text-2xl font-extrabold text-gray-700">OUR COURSES</h2>
           <section class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
             <article class="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform duration-200">
               <div class="relative w-full h-80 md:h-64 lg:h-44">
@@ -32,7 +32,7 @@ export default function News() {
             <article class="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform duration-200">
               <div class="relative w-full h-80 md:h-64 lg:h-44">
                 <img
-                  src="https://cdn.pixabay.com/photo/2021/09/08/20/45/bird-6607863_960_720.jpg.jpg"
+                  src="https://cdn.pixabay.com/photo/2021/09/12/17/43/parrot-feathers-6619082_960_720.jpg"
                   alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
                   class="w-full h-full object-center object-cover"
                 />
