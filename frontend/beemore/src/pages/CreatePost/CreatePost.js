@@ -21,6 +21,19 @@ export default function CreatePost() {
                   className="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
                 />
               </div>
+              <fieldset className="w-full space-y-1 text-coolGray-800">
+                <label for="files" className="block text-sm font-medium">
+                  Attachments
+                </label>
+                <div className="flex">
+                  <input
+                    type="file"
+                    name="files"
+                    id="files"
+                    className="px-8 py-12 border-2 border-dashed rounded-md border-coolGray-300 text-coolGray-600 bg-coolGray-100"
+                  />
+                </div>
+              </fieldset>
               <div>
                 <label
                   for="description"
