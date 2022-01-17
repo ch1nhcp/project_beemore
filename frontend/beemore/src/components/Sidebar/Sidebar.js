@@ -1,20 +1,15 @@
 export default function Sidebar() {
   return (
     <>
-      <div class="flex flex-col w-64 h-screen px-4 py-8 bg-white border-r dark:bg-gray-800 dark:border-gray-600">
-        <h2 class="text-3xl font-semibold text-gray-800 dark:text-white">
-          Menu
-        </h2>
-
-       
-        <div class="flex flex-col justify-between flex-1 mt-6">
+      <div className="flex flex-col w-64 h-screen px-4 bg-white border-lg dark:bg-gray-800 dark:border-gray-600 shadow">
+        <div className="flex flex-col justify-between flex-1 mt-6">
           <nav>
             <a
-              class="flex items-center px-4 py-2 text-gray-700 bg-gray-200 rounded-md dark:bg-gray-700 dark:text-gray-200"
+              className="flex items-center px-4 py-2 text-gray-700 bg-gray-200 rounded-md dark:bg-gray-700 dark:text-gray-200"
               href="#"
             >
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,15 +23,15 @@ export default function Sidebar() {
                 />
               </svg>
 
-              <span class="mx-4 font-medium">Dashboard</span>
+              <span className="mx-4 font-medium">Home</span>
             </a>
 
             <a
-              class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+              className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
               href="#"
             >
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,15 +52,15 @@ export default function Sidebar() {
                 />
               </svg>
 
-              <span class="mx-4 font-medium">Accounts</span>
+              <span className="mx-4 font-medium">Explore</span>
             </a>
 
             <a
-              class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+              className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
               href="#"
             >
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -79,15 +74,15 @@ export default function Sidebar() {
                 />
               </svg>
 
-              <span class="mx-4 font-medium">Tickets</span>
+              <span className="mx-4 font-medium">Static</span>
             </a>
 
             <a
-              class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+              className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
               href="#"
             >
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -108,17 +103,17 @@ export default function Sidebar() {
                 />
               </svg>
 
-              <span class="mx-4 font-medium">Settings</span>
+              <span className="mx-4 font-medium">Tool</span>
             </a>
 
-            <hr class="my-6 border-gray-200 dark:border-gray-600" />
+            <hr className="my-6 border-gray-200 dark:border-gray-600" />
 
             <a
-              class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+              className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
               href="#"
             >
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -132,15 +127,15 @@ export default function Sidebar() {
                 />
               </svg>
 
-              <span class="mx-4 font-medium">Tickets</span>
+              <span className="mx-4 font-medium">Tickets</span>
             </a>
 
             <a
-              class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
+              className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700"
               href="#"
             >
               <svg
-                class="w-5 h-5"
+                className="w-5 h-5"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -161,20 +156,9 @@ export default function Sidebar() {
                 />
               </svg>
 
-              <span class="mx-4 font-medium">Settings</span>
+              <span className="mx-4 font-medium">Chat </span>
             </a>
           </nav>
-
-          <div class="flex items-center px-4 -mx-2">
-            <img
-              class="object-cover mx-2 rounded-full h-9 w-9"
-              src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-              alt="avatar"
-            />
-            <h4 class="mx-2 font-medium text-gray-800 dark:text-gray-200 hover:underline">
-              John Doe
-            </h4>
-          </div>
         </div>
       </div>
     </>

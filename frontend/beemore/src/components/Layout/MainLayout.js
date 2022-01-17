@@ -6,7 +6,7 @@ export default function MainLayout({ children }) {
   return (
     <div>
       <Navbar />
-      <div className="container mt-4">{children}</div>
+      <div className="mt-4">{children}</div>
       <Footer />
     </div>
   );
