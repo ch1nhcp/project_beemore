@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CreatePost from "./pages/CreatePost";
+import PostDetail from "./pages/PostDetail";
 
 import { Routes, Route } from "react-router-dom";
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/add" element={<CreatePost />} />
+        <Route path="/post" element={<PostDetail />} />
 
         <Route path="/" element={<Home />} />
       </Routes>

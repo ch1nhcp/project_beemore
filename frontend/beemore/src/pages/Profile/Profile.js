@@ -14,7 +14,7 @@ export default function About() {
         />
         <div class="flex flex-col items-center justify-center p-4 -mt-16">
           <img
-            alt="profil"
+            alt="profile"
             src="https://www.tailwind-kit.com/images/person/1.jpg"
             class="mx-auto object-cover rounded-full h-30 w-30  border-2 border-white dark:border-gray-800"
           />
