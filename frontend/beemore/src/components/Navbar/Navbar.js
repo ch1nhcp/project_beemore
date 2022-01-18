@@ -35,7 +35,7 @@ export default function Navbar() {
             <div className="flex items-center py-2 -mx-1 md:mx-0">
               <Link
                 to="/login"
-                className="block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-blue-500 transition-colors duration-200 transform rounded-md hover:bg-blue-600 md:mx-2 md:w-auto"
+                className="block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-blue-500 transition-colors duration-200 transform rounded-md hover:bg-blue-600 hover:text-white md:mx-2 md:w-auto"
               >
                 Login
               </Link>
