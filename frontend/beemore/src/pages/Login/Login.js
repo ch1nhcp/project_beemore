@@ -99,9 +99,7 @@ export default function Login() {
                   "
               >
                 <div class="flex items-center justify-center">
-                  <a href="https://cdnlogo.com/logo/google-icon_42306.html">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-                  </a>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                   <span class="ml-4"> Log in with Google</span>
                 </div>
               </button>
