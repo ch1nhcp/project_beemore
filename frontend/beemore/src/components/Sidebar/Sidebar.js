@@ -13,7 +13,7 @@ export default function Sidebar() {
                   <button
                     type="button"
                     title="search"
-                    className="p-1 focus:outline-none focus:ring"
+                    className="p-2 focus:outline-none focus:ring"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
