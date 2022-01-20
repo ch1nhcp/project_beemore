@@ -21,7 +21,7 @@ export const ScrollIndicator = ({ children }) => {
 
   const inlineStyle = {
     height: "6px",
-    background: "#4C1D95",
+    background: "#2563eb",
     width: scroll,
   };
 
