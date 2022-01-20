@@ -1,33 +1,33 @@
 export default function ListPost() {
   return (
     <>
-      <section class="text-gray-600 body-font" >
-        <div class="container px-5 py-24 mx-auto">
-        <h2 class="text-2xl font-extrabold text-gray-700">BLOGS</h2>
-          <div class="flex flex-wrap ">
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <h2 className="text-2xl font-extrabold text-gray-700">BLOGS</h2>
+          <div className="flex flex-wrap ">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/481x361"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     The Catalyzer
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap ">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -39,9 +39,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -54,9 +54,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -72,29 +72,29 @@ export default function ListPost() {
                 </div>
               </div>
             </div>
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/482x362"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     The Catalyzer
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap ">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -106,9 +106,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -121,9 +121,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -139,29 +139,29 @@ export default function ListPost() {
                 </div>
               </div>
             </div>
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/483x363"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     The Catalyzer
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap ">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -173,9 +173,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -188,9 +188,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -206,29 +206,29 @@ export default function ListPost() {
                 </div>
               </div>
             </div>
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/484x364"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     The Catalyzer
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap ">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -240,9 +240,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -255,9 +255,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -273,29 +273,29 @@ export default function ListPost() {
                 </div>
               </div>
             </div>
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/485x365"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     The Catalyzer
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap ">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -307,9 +307,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -322,9 +322,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -340,29 +340,29 @@ export default function ListPost() {
                 </div>
               </div>
             </div>
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/486x366"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     The Catalyzer
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap ">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -374,9 +374,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -389,9 +389,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -407,29 +407,29 @@ export default function ListPost() {
                 </div>
               </div>
             </div>
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/487x367"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     The Catalyzer
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap ">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -441,9 +441,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -456,9 +456,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -475,29 +475,29 @@ export default function ListPost() {
               </div>
             </div>
 
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/487x366"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     The 400 Blows
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -509,9 +509,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -524,9 +524,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -543,29 +543,29 @@ export default function ListPost() {
               </div>
             </div>
 
-            <div class="p-4 md:w-1/3">
-              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  class="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://source.unsplash.com/random/487x368"
                   alt="blog"
                 />
-                <div class="p-6">
-                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+                <div className="p-6">
+                  <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
                     CATEGORY
                   </h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     Shooting Stars
                   </h1>
-                  <p class="leading-relaxed mb-3">
+                  <p className="leading-relaxed mb-3">
                     Photo booth fam kinfolk cold-pressed sriracha leggings
                     jianbing microdosing tousled waistcoat.
                   </p>
-                  <div class="flex items-center flex-wrap ">
-                    <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
+                  <div className="flex items-center flex-wrap ">
+                    <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
                       Learn More
                       <svg
-                        class="w-4 h-4 ml-2"
+                        className="w-4 h-4 ml-2"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                         stroke-width="2"
@@ -577,9 +577,9 @@ export default function ListPost() {
                         <path d="M12 5l7 7-7 7"></path>
                       </svg>
                     </a>
-                    <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
+                    <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"
@@ -592,9 +592,9 @@ export default function ListPost() {
                       </svg>
                       1.2K
                     </span>
-                    <span class="text-gray-400 inline-flex items-center leading-none text-sm">
+                    <span className="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
-                        class="w-4 h-4 mr-1"
+                        className="w-4 h-4 mr-1"
                         stroke="currentColor"
                         stroke-width="2"
                         fill="none"

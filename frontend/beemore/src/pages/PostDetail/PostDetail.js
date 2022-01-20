@@ -74,23 +74,84 @@ export default function PostDetail() {
               <div className="max-w-4xl px-10  mx-auto text-2xl text-gray-700 mt-4 rounded bg-gray-100">
                 {/* <!--content body--> */}
                 <div>
-                  <p className="mt-2 p-8">
-                    If you created a web application and wanted it to grow a
-                    user base reall quickly,the easiest way is to avoid
-                    bothering them with alot forms. No one likes filling up
-                    forms! A web form should and must only be used when
-                    necessary,in case a user doesnt have account with any of the
-                    social networks.That is the moment you want to implement
-                    social login on your application.
+                  <p
+                    className="mt-2 p-8 first-line:uppercase first-line:tracking-widest
+  first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
+  first-letter:mr-3 first-letter:float-left"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Proin sit amet euismod eros, ut euismod justo. Praesent
+                    elementum vulputate interdum. Integer nec ultrices nisl, at
+                    dictum velit. Sed vitae mauris quis metus suscipit placerat.
+                    Sed eleifend interdum dictum. Proin nisl odio, dapibus eget
+                    dignissim vel, malesuada ut turpis. Praesent condimentum
+                    congue massa in vestibulum. Donec justo erat, feugiat at
+                    fermentum at, pretium ac ante. Duis et congue dolor.
+                    Suspendisse et ultrices leo, a pulvinar diam. Nunc nisi
+                    libero, dictum eget ullamcorper condimentum, bibendum vitae
+                    orci. Fusce ullamcorper neque ac purus vestibulum accumsan.
+                    Fusce in lobortis ipsum. Mauris mollis, massa molestie
+                    viverra aliquam, nibh nulla suscipit nibh, at malesuada mi
+                    orci eu quam. Suspendisse at tristique tortor. Proin vitae
+                    sodales ipsum, eget euismod dui. Nunc non urna lacus. Mauris
+                    porttitor fringilla pulvinar. Cras ac quam facilisis,
+                    dapibus odio tristique, fringilla felis. Sed faucibus
+                    consectetur quam, ac mattis neque interdum quis. Donec
+                    laoreet vel lorem id fermentum. Praesent aliquet magna
+                    dolor. Pellentesque mattis, ante vitae eleifend auctor, mi
+                    dui fermentum nisl, non vulputate nunc urna in augue.
+                    Vestibulum porttitor, nunc vitae luctus convallis, ipsum
+                    ligula porttitor arcu, a condimentum massa velit feugiat
+                    enim. Donec eget quam pharetra, pellentesque est non, dictum
+                    justo. Curabitur viverra, turpis at maximus malesuada, nisl
+                    odio mattis nisl, sed interdum lectus leo scelerisque nisi.
+                    Sed dignissim leo ut lorem maximus ultricies. Aenean
+                    vestibulum hendrerit lacinia. In urna mauris, venenatis ut
+                    felis sit amet, venenatis aliquet neque. Morbi interdum
+                    commodo facilisis. Duis aliquam pharetra rutrum. Mauris
+                    ultrices eros id magna mollis vestibulum. Proin in tellus et
+                    nisi lacinia vestibulum eu vitae nibh. Etiam magna sapien,
+                    luctus eu aliquet id, pretium non magna. Sed rutrum tortor
+                    eu magna rhoncus, nec egestas tellus faucibus. Aliquam nulla
+                    leo, egestas sed convallis efficitur, mattis a ante. Ut
+                    tempus aliquet tincidunt. Phasellus sit amet nunc vitae quam
+                    luctus congue nec non ligula. Integer feugiat aliquam nulla,
+                    ac eleifend orci porta et. Aliquam facilisis laoreet varius.
+                    Vivamus eleifend, dui at mattis bibendum, enim ante suscipit
+                    urna, et feugiat sapien nisl at turpis. Aenean velit diam,
+                    molestie non eros eu, hendrerit tincidunt nunc. Nunc ipsum
+                    nunc, luctus eget massa in, tristique vulputate nisi. Nunc
+                    vestibulum sollicitudin nibh sed vehicula. Integer fermentum
+                    nibh sit amet est faucibus iaculis. Vestibulum mi eros,
+                    commodo sit amet varius a, suscipit ultrices erat. Proin
+                    hendrerit sapien vel mauris pretium, at tristique tortor
+                    tristique. Sed mattis aliquet ipsum, id tempus tortor
+                    aliquam nec. Nam elementum imperdiet elementum. Mauris
+                    suscipit odio ut dolor porta, quis pretium augue gravida.
+                    Phasellus leo magna, luctus vel massa rhoncus, tincidunt
+                    faucibus purus. Nam blandit iaculis massa, mattis
+                    ullamcorper sapien venenatis non. Proin aliquet lacinia
+                    eros, ac iaculis est fringilla eu. Etiam eu nunc nec dui
+                    gravida tincidunt. Ut porta risus a ornare rhoncus. Integer
+                    dictum mi a ex varius tincidunt. Etiam vitae ullamcorper
+                    neque. Vivamus imperdiet commodo rhoncus. Quisque id rhoncus
+                    justo. Donec elementum ornare magna, eu accumsan urna
+                    efficitur vitae. Curabitur nec venenatis enim. Curabitur
+                    interdum libero quis justo scelerisque, facilisis porttitor
+                    lacus bibendum. Integer eu augue lacus. Suspendisse potenti.
+                    Curabitur varius nunc lobortis sapien posuere, non aliquam
+                    turpis consequat. Curabitur at nisi at ligula posuere
+                    tincidunt. Nullam justo metus, lacinia et arcu nec, interdum
+                    vestibulum libero.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="basis-1/3">
+          <div className="basis-1/3 max-w-4xl px-10 py-16 mx-auto px-0 px-8 mx-auto sm:px-12 xl:px-5">
             {/* <!--form form comments--> */}
 
-            <div class="flex mx-auto items-center justify-center shadow-lg mt-56 mx-8 mb-4 max-w-lg">
+            <div class="w-full p-5 items-center justify-center shadow mt-56 mb-4 max-w-lg">
               <div class="w-full max-w-xl bg-white rounded-lg px-4 pt-2">
                 <div class="flex flex-wrap -mx-3 mb-6">
                   <h2 class="px-4 pt-3 pb-2 text-gray-800 text-lg">
@@ -119,58 +180,62 @@ export default function PostDetail() {
 
             {/* <!--comments--> */}
 
-            <div className="max-w-4xl px-10 py-16 mx-auto bg-gray-100  bg-white min-w-screen animation-fade animation-delay  px-0 px-8 mx-auto sm:px-12 xl:px-5">
-              <p className="mt-1 text-2xl font-bold text-left text-gray-800 sm:mx-6 sm:text-2xl md:text-3xl lg:text-4xl sm:text-center sm:mx-0">
-                All comments on this post
-              </p>
-              {/* <!--comment 1--> */}
-              <div className="flex  items-center w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
-                <a href="#" className="flex items-center mt-6 mb-6 mr-6">
+            <div className="w-full max-w-xl shadow bg-white rounded-lg px-4 pt-2">
+              <ul role="list" class="p-6 divide-y divide-slate-200">
+                <li class="flex py-4 first:pt-0 last:pb-0">
                   <img
-                    src="https://avatars.githubusercontent.com/u/71964085?v=4"
-                    alt="avatar"
-                    className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block"
+                    class="h-10 w-10 rounded-full"
+                    src="https://source.unsplash.com/random/481x361"
+                    alt=""
                   />
-                </a>
-
-                <div>
-                  <h3 className="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">
-                    By James Amos
-                  </h3>
-                  <p className="text-sm font-bold text-gray-300">
-                    August 22,2021
-                  </p>
-                  <p className="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
-                    Please help with how you did the migrations for the blog
-                    database fields.I tried mine using exactly what you
-                    instructed but its not working!!.
-                  </p>
-                </div>
-              </div>
-              {/* <!--comment 2--> */}
-              <div className="flex  items-center w-full px-6 py-6 mx-auto mt-10 bg-white border border-gray-200 rounded-lg sm:px-8 md:px-12 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
-                <a href="#" className="flex items-center mt-6 mb-6 mr-6">
+                  <div class="ml-3 overflow-hidden">
+                    <p class="text-sm font-medium text-slate-900">Admin</p>
+                    <p class="text-sm text-slate-500">
+                      This is my dummy comment This is my dummy comment This is
+                      my dummy comment
+                    </p>
+                  </div>
+                </li>
+                <li class="flex py-4 first:pt-0 last:pb-0">
                   <img
-                    src="https://avatars.githubusercontent.com/u/71964085?v=4"
-                    alt="avatar"
-                    className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block"
+                    class="h-10 w-10 rounded-full"
+                    src="https://source.unsplash.com/random/481x361"
+                    alt=""
                   />
-                </a>
-
-                <div>
-                  <h3 className="text-lg font-bold text-purple-500 sm:text-xl md:text-2xl">
-                    By James Amos
-                  </h3>
-                  <p className="text-sm font-bold text-gray-300">
-                    August 22,2021
-                  </p>
-                  <p className="mt-2 text-base text-gray-600 sm:text-lg md:text-normal">
-                    Especially I dont understand the concepts of multiple
-                    models.What really is the difference between the blog model
-                    and blogApp model? Am stuck
-                  </p>
-                </div>
-              </div>
+                  <div class="ml-3 overflow-hidden">
+                    <p class="text-sm font-medium text-slate-900">Admin</p>
+                    <p class="text-sm text-slate-500">
+                      This is my dummy comment
+                    </p>
+                  </div>
+                </li>
+                <li class="flex py-4 first:pt-0 last:pb-0">
+                  <img
+                    class="h-10 w-10 rounded-full"
+                    src="https://source.unsplash.com/random/481x361"
+                    alt=""
+                  />
+                  <div class="ml-3 overflow-hidden">
+                    <p class="text-sm font-medium text-slate-900">Admin</p>
+                    <p class="text-sm text-slate-500">
+                      This is my dummy comment
+                    </p>
+                  </div>
+                </li>
+                <li class="flex py-4 first:pt-0 last:pb-0">
+                  <img
+                    class="h-10 w-10 rounded-full"
+                    src="https://source.unsplash.com/random/481x361"
+                    alt=""
+                  />
+                  <div class="ml-3 overflow-hidden">
+                    <p class="text-sm font-medium text-slate-900">Admin</p>
+                    <p class="text-sm text-slate-500">
+                      This is my dummy comment
+                    </p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
