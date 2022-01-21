@@ -51,9 +51,12 @@ export default function Navbar() {
                   <Link to={`/user/${user.user._id}`} className="link">
                     <div class="rounded-full w-10 h-10">
                       {user.user.picture == "" ? (
-                        <img src="https://source.unsplash.com/random/100x100" />
+                        <img
+                          src="https://source.unsplash.com/random/100x100"
+                          alt=""
+                        />
                       ) : (
-                        <img src={user.user.picture} />
+                        <img src={PF + user.user.picture} alt="" />
                       )}
                     </div>
                   </Link>

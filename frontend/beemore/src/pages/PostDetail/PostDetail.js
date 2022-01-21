@@ -176,11 +176,11 @@ export default function PostDetail() {
                         <i
                           className="singlePagePostIcon fas fa-edit"
                           onClick={() => setUpdateMode(true)}
-                        ></i>
+                        > Update</i>
                         <i
                           className="singlePagePostIcon fas fa-trash-alt"
                           onClick={handleDelete}
-                        ></i>
+                        >Delete</i>
                       </div>
                     )}
                   </a>

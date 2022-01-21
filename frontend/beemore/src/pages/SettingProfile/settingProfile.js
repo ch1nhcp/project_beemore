@@ -7,8 +7,7 @@ import { useLocation, useParams } from "react-router";
 
 export default function Settings() {
   const { dispatch, user } = useContext(Context);
-  const [file1, setFile1] = useState(null);
-  const [file2, setFile2] = useState(null);
+  const [file, setFile] = useState(null);
 
   const [username, setUsername] = useState("");
   const [picture, setPicture] = useState("");
@@ -114,22 +113,12 @@ export default function Settings() {
       password,
     };
 
-    if (file1) {
+    if (file) {
       const data = new FormData();
-      const filename = Date.now() + file1.name;
+      const filename = Date.now() + file.name;
       data.append("name", filename);
-      data.append("file", file1);
+      data.append("file", file);
       updatedUser.picture = filename;
-      try {
-        await axios.post("/upload", data);
-      } catch (err) {}
-    }
-    if (file2) {
-      const data = new FormData();
-      const filename = Date.now() + file2.name;
-      data.append("name", filename);
-      data.append("file", file2);
-      updatedUser.background = filename;
       try {
         await axios.post("/upload", data);
       } catch (err) {}
@@ -142,16 +131,12 @@ export default function Settings() {
 
       window.location.reload("");
 
-      // localStorage.removeItem("user");
+      localStorage.removeItem("user");
 
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
-
-      // dispatch({type: "LOGIN_SUCCESS", payload: res.data});
     } catch (err) {
       dispatch({ type: "UPDATE_FAILURE" });
     }
-    // localStorage.removeItem("user");
-    // window.location.reload("");
   };
 
   return (
@@ -165,36 +150,11 @@ export default function Settings() {
 
           {/* Form Update */}
           <form className="settingsForm" onSubmit={handleSubmit}>
-            {/* userModel background */}
-            <label>Profile Background</label>
-            <div className="settingsPP">
-              <img
-                src={
-                  file1 ? URL.createObjectURL(file1) : PF + user.user.background
-                }
-                alt=""
-                style={{ width: "1000px", height: "300px" }}
-              />
-              <label htmlFor="fileInput">
-                <i className="settingsPPIcon far fa-user-circle"></i>
-              </label>
-
-              {/* input background */}
-              <input
-                type="file"
-                id="fileInput"
-                style={{ display: "none" }}
-                onChange={(e) => setFile1(e.target.files[0])}
-              />
-            </div>
-
             {/* userModel picture */}
             <label>Profile Picture</label>
             <div className="settingsPP">
               <img
-                src={
-                  file2 ? URL.createObjectURL(file2) : PF + user.user.picture
-                }
+                src={file ? URL.createObjectURL(file) : PF + user.user.picture}
                 alt=""
               />
               <label htmlFor="fileInput">
@@ -206,7 +166,7 @@ export default function Settings() {
                 type="file"
                 id="fileInput"
                 style={{ display: "none" }}
-                onChange={(e) => setFile2(e.target.files[1])}
+                onChange={(e) => setFile(e.target.files[0])}
               />
             </div>
 
@@ -216,14 +176,16 @@ export default function Settings() {
               type="text"
               placeholder={user.user.username}
               onChange={(e) => setUsername(e.target.value)}
+              required
             />
 
             {/* userModel account */}
             <label>Account</label>
             <input
-              // type="email"
+              type="email"
               placeholder={user.user.account}
               onChange={(e) => setAccount(e.target.value)}
+              required
             />
             <label>Password</label>
 
@@ -231,6 +193,7 @@ export default function Settings() {
             <input
               type="password"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <button
               className="settingsSubmit"

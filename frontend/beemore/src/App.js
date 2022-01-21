@@ -14,6 +14,7 @@ import { ContextProvider, Context } from "./context/Context";
 
 import { Routes, Route } from "react-router-dom";
 import React, { useContext, useState, useReducer } from "react";
+import ActivationEmail from "./ActivationEmail/ActivationEmail";
 
 function App() {
   const { user } = useContext(Context);

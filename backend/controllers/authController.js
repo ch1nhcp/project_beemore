@@ -324,7 +324,7 @@ const updateUser = async(req, res) => {
         }
         try {
             const updatedUser = await userModel.findOneAndUpdate(
-                {_id: req.user.id}, 
+                {_id: req.params.id}, 
                 {$set: req.body}, 
                 {new: true}
             );
