@@ -78,20 +78,6 @@ export default function CreatePost() {
               <h1 className="text-center text-2xl font-bold text-gray-500 mb-10">
                 ADD POST
               </h1>
-              {/* Error Text */}
-              {error && (
-                <span
-                  className="error"
-                  style={{
-                    fontSize: "30px",
-                    marginTop: "20px",
-                    color: "white",
-                    background: "red",
-                  }}
-                >
-                  Đăng bài thất bại
-                </span>
-              )}
 
               <div className="space-y-4">
                 {/* Create Post Title */}
@@ -106,6 +92,7 @@ export default function CreatePost() {
                     id="title"
                     className="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
                     onChange={(e) => setTitle(e.target.value)}
+                    required
                   />
                 </div>
 
@@ -140,6 +127,7 @@ export default function CreatePost() {
                     placeholder="write here.."
                     className="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"
                     onChange={(e) => setDescription(e.target.value)}
+                    required
                   ></textarea>
                 </div>
 
@@ -154,7 +142,23 @@ export default function CreatePost() {
                     id="name"
                     className="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md"
                     onChange={(e) => setCategories(e.target.value)}
+                    required
                   />
+
+                  {/* Error Text */}
+                  {error && (
+                    <span
+                      className="error"
+                      style={{
+                        fontSize: "20px",
+                        marginTop: "20px",
+                        marginLeft: "40px",
+                        color: "red",
+                      }}
+                    >
+                      Tạo bài thất bại
+                    </span>
+                  )}
                 </div>
 
                 {/* Button Create Post */}

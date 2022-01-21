@@ -15,6 +15,7 @@ import { ContextProvider, Context } from "./context/Context";
 import { Routes, Route } from "react-router-dom";
 import React, { useContext, useState, useReducer } from "react";
 import ActivationEmail from "./ActivationEmail/ActivationEmail";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 
 function App() {
   const { user } = useContext(Context);
@@ -28,6 +29,10 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/add" element={user ? <CreatePost /> : <Login />} />
+        <Route
+          path="/forgot_password"
+          element={<ForgotPassword></ForgotPassword>}
+        ></Route>
 
         <Route path="/post/:postId" element={<PostDetail />} />
         <Route

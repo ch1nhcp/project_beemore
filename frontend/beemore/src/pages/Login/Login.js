@@ -19,6 +19,8 @@ export default function Login() {
     try {
       e.preventDefault();
 
+      setErrorMessage(false);
+
       const res = await axios.post("/auth/login", {
         // /api/auth/login
         account: accountRef.current.value,
@@ -36,6 +38,8 @@ export default function Login() {
 
       window.location.replace("/");
     } catch (err) {
+      setErrorMessage(true);
+
       dispatch({ type: "LOGIN_FAIL" });
     }
   };
@@ -58,6 +62,7 @@ export default function Login() {
             </a>
             <span className="sr-only">Beemore</span>
           </a>
+
           <div className="w-full px-0 pt-5 pb-6 mx-auto mt-4 mb-0 space-y-4 bg-transparent border-0 border-gray-200 rounded-lg md:bg-white md:border sm:w-10/12 md:w-8/12 lg:w-6/12 xl:w-4/12 md:px-6 sm:mt-8 sm:mb-5">
             <h1 className="mb-5 text-xl font-light text-left text-gray-800 sm:text-center">
               Log in to your account
@@ -88,6 +93,20 @@ export default function Login() {
                   ref={passwordRef}
                 />
               </label>
+
+              {/* Error Text */}
+              {errorMessage && (
+                <span
+                  className="error"
+                  style={{
+                    fontSize: "12px",
+                    marginTop: "20px",
+                    color: "red",
+                  }}
+                >
+                  Đăng nhập thất bại
+                </span>
+              )}
 
               <div className="flex items-center justify-between">
                 <label className="flex items-center">
@@ -147,9 +166,13 @@ export default function Login() {
             </div>
           </div>
           <p className="mb-4 space-y-2 text-sm text-left text-gray-600 sm:text-center sm:space-y-0">
-            <a href="#" className="w-full btn btn-sm btn-link sm:w-auto">
+            <Link
+              to="/forgot_password"
+              href="#"
+              className="w-full btn btn-sm btn-link sm:w-auto"
+            >
               Forgot password
-            </a>
+            </Link>
             <Link
               to="/register"
               className="w-full btn btn-sm btn-link sm:w-auto"
