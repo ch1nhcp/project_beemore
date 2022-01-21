@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import CreatePost from "./pages/CreatePost";
 import PostDetail from "./pages/PostDetail";
+import SettingProfile from "./pages/SettingProfile/settingProfile";
 
 import { ContextProvider, Context } from "./context/Context";
 
@@ -29,11 +30,17 @@ function App() {
 
         <Route path="/post/:postId" element={<PostDetail />} />
         <Route
+          path="/settings"
+          element={user ? <SettingProfile></SettingProfile> : <Login />}
+        ></Route>
+
+        <Route
           path="/user/:userId"
           element={user ? <Profile /> : <Login></Login>}
         />
 
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

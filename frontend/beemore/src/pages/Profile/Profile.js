@@ -97,6 +97,27 @@ export default function About() {
               />
             </svg>
           </div>
+          {user.user._id === params.userId ? (
+            <button class="bg-grey-light hover:bg-grey text-grey-darkest font-bold py-2 px-4 rounded inline-flex items-center">
+              <Link to="/settings">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#000000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon>
+                  <line x1="3" y1="22" x2="21" y2="22"></line>
+                </svg>
+                <span>Edit</span>
+              </Link>
+            </button>
+          ) : null}
 
           <div class="rounded-lg w-80 mt-2">
             <div class="flex items-center justify-between text-lg text-gray-600 dark:text-gray-200">
@@ -126,7 +147,7 @@ export default function About() {
               ) ? (
               <button
                 type="button"
-                class="px-4 py-2 text-base border rounded-lg text-white bg-indigo-500 hover:bg-indigo-700 "
+                class="bg-blue-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed"
               >
                 Followed
               </button>
