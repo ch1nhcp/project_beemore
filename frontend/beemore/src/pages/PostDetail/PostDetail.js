@@ -1,70 +1,179 @@
-import React from "react";
 import MainLayout from "../../components/Layout";
+import React from "react";
+import { useLocation, useParams } from "react-router";
+import { useEffect, useState, useContext } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 import ScrollIndicator from "../../components/ScrollIndicator";
+
 export default function PostDetail() {
+  //!Axios Connect FrontendBackend - One Post - Connect /post from Post.jsx Link to={`/post/${post._id}`}:
+  const location = useLocation();
+  const path = location.pathname.split("/")[2];
+
+  const [post, setPost] = useState({}); //nhập vào và lấy ra
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [categories, setCategories] = useState("");
+  const [authorId, setAuthorId] = useState("");
+  const [authorName, setAuthorName] = useState("");
+
+  const [updateMode, setUpdateMode] = useState(false);
+
+  const PF = "http://localhost:5000/images/";
+
+  const [socket, setSocket] = useState(null);
+  const { id } = useParams();
+
+  //!Context API Reducer Action - Xác thực đăng nhập user trong phiên đăng nhập:
+  const { state, dispatch, user, author } = useContext(Context);
+  console.log(user);
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get("/posts/" + path); // /api/posts/path = /api/posts/:id
+      setPost(res.data._doc);
+      setTitle(res.data._doc.title);
+      setDescription(res.data._doc.description);
+      setCategories(res.data._doc.categories);
+      setAuthorId(res.data._doc.postedBy);
+      setAuthorName(res.data.username);
+
+      console.log(res.data);
+    };
+    getPost();
+  }, [path]);
+
+  //!handleUpdatePost:
+  const handleUpdate = async () => {
+    try {
+      //!Lấy tokenJWT của User:
+      const token = localStorage.getItem("token");
+      console.log(token);
+
+      await axios.put(`/posts/${post._id}`, {
+        // /api/posts/:id
+        postedBy: user.user._id,
+        title: title,
+        categories: categories,
+        description: description,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  //!handleDeletePost:
+  const handleDelete = async () => {
+    try {
+      await axios.delete("/posts/" + path); // /api/posts/:id
+
+      window.location.replace("/");
+
+      // console.log(user.access_token)
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  // Scroll to top of page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <MainLayout>
       <ScrollIndicator>
         <div className="flex flex-row p-10 bg-gray-50">
           <div className="basis-2/3 p-10">
-            {/* <!-- component --> */}
-            {/* <!--author--> */}
             <div className="max-w-6xl px-10 py-6 mx-auto bg-gray-50">
-              <img
-                className="object-cover h-60 w-full"
-                src="https://source.unsplash.com/random/1920x1080"
-              />
+              {/* Post Photo */}
+              {PF + post.photo && (
+                <img
+                  className="object-cover h-60 w-full"
+                  src={PF + post.photo}
+                />
+              )}
 
-              {/* <!--post categories--> */}
+              {/* <!--Post Categories--> */}
               <div className="flex items-center justify-start mt-4 mb-4">
-                <a
-                  href="#"
-                  className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4"
-                >
-                  #Django
-                </a>
-                <a
-                  href="#"
-                  className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4"
-                >
-                  #Python
-                </a>
-                <a
-                  href="#"
-                  className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500"
-                >
-                  #web development
-                </a>
+                {updateMode ? (
+                  <input
+                    type="text"
+                    value={categories}
+                    onChange={(e) => setCategories(e.target.value)}
+                  ></input>
+                ) : (
+                  <Link
+                    to={`/?category=${post.categories}`}
+                    href="#"
+                    className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500"
+                  >
+                    <div>{post.categories}</div>
+                  </Link>
+                )}
               </div>
-              <div className="mt-2">
-                {/* <!--post heading--> */}
-                <a
-                  href="#"
-                  className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-black-500  hover:underline"
-                >
-                  Django Authentication with oauth using facebook,twitter and
-                  google
-                </a>
 
-                {/* <!--post views--> */}
+              <div className="mt-2">
+                {/* Post Title */}
+                {updateMode ? (
+                  <input
+                    type="text"
+                    className="singlePagePostTitleUpdate"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                  ></input>
+                ) : (
+                  <a
+                    href="#"
+                    className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-black-500  hover:underline"
+                  >
+                    {post.title}
+                  </a>
+                )}
+
                 <div className="flex justify-start items-center mt-2">
                   <p className="text-sm text-green-500 font-bold bg-gray-100 rounded-full py-2 px-2 hover:text-red-500">
-                    3000
+                    {post.rating}
                   </p>
                   <p className="text-sm text-gray-400 font-bold ml-5">Views</p>
                 </div>
 
-                {/* <!--author avator--> */}
                 <div className="font-light text-gray-600">
                   <a href="#" className="flex items-center mt-6 mb-6">
+                    {/* Post Author picture */}
                     <img
-                      src="https://avatars.githubusercontent.com/u/71964085?v=4"
+                      src={post.postedBy}
                       alt="avatar"
                       className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block"
                     />
-                    <h1 className="font-bold text-gray-700 hover:underline">
-                      By James Amos
-                    </h1>
+
+                    {/* Post Author */}
+                    <Link to={`/user/${authorId}`} className="link">
+                      <small className="font-bold text-gray-700 hover:underline">
+                        {authorName}
+                      </small>
+                    </Link>
+
+                    {/* Post Icon Update Delete */}
+                    {post.postedBy === user?.user._id && (
+                      <div className="singlePagePostEdit">
+                        <i
+                          className="singlePagePostIcon fas fa-edit"
+                          onClick={() => setUpdateMode(true)}
+                        ></i>
+                        <i
+                          className="singlePagePostIcon fas fa-trash-alt"
+                          onClick={handleDelete}
+                        ></i>
+                      </div>
+                    )}
                   </a>
                 </div>
               </div>
@@ -74,78 +183,29 @@ export default function PostDetail() {
               <div className="max-w-4xl px-10  mx-auto text-2xl text-gray-700 mt-4 rounded bg-gray-100">
                 {/* <!--content body--> */}
                 <div>
-                  <p
-                    className="mt-2 p-8 first-line:uppercase first-line:tracking-widest
-  first-letter:text-7xl first-letter:font-bold first-letter:text-slate-900
-  first-letter:mr-3 first-letter:float-left"
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Proin sit amet euismod eros, ut euismod justo. Praesent
-                    elementum vulputate interdum. Integer nec ultrices nisl, at
-                    dictum velit. Sed vitae mauris quis metus suscipit placerat.
-                    Sed eleifend interdum dictum. Proin nisl odio, dapibus eget
-                    dignissim vel, malesuada ut turpis. Praesent condimentum
-                    congue massa in vestibulum. Donec justo erat, feugiat at
-                    fermentum at, pretium ac ante. Duis et congue dolor.
-                    Suspendisse et ultrices leo, a pulvinar diam. Nunc nisi
-                    libero, dictum eget ullamcorper condimentum, bibendum vitae
-                    orci. Fusce ullamcorper neque ac purus vestibulum accumsan.
-                    Fusce in lobortis ipsum. Mauris mollis, massa molestie
-                    viverra aliquam, nibh nulla suscipit nibh, at malesuada mi
-                    orci eu quam. Suspendisse at tristique tortor. Proin vitae
-                    sodales ipsum, eget euismod dui. Nunc non urna lacus. Mauris
-                    porttitor fringilla pulvinar. Cras ac quam facilisis,
-                    dapibus odio tristique, fringilla felis. Sed faucibus
-                    consectetur quam, ac mattis neque interdum quis. Donec
-                    laoreet vel lorem id fermentum. Praesent aliquet magna
-                    dolor. Pellentesque mattis, ante vitae eleifend auctor, mi
-                    dui fermentum nisl, non vulputate nunc urna in augue.
-                    Vestibulum porttitor, nunc vitae luctus convallis, ipsum
-                    ligula porttitor arcu, a condimentum massa velit feugiat
-                    enim. Donec eget quam pharetra, pellentesque est non, dictum
-                    justo. Curabitur viverra, turpis at maximus malesuada, nisl
-                    odio mattis nisl, sed interdum lectus leo scelerisque nisi.
-                    Sed dignissim leo ut lorem maximus ultricies. Aenean
-                    vestibulum hendrerit lacinia. In urna mauris, venenatis ut
-                    felis sit amet, venenatis aliquet neque. Morbi interdum
-                    commodo facilisis. Duis aliquam pharetra rutrum. Mauris
-                    ultrices eros id magna mollis vestibulum. Proin in tellus et
-                    nisi lacinia vestibulum eu vitae nibh. Etiam magna sapien,
-                    luctus eu aliquet id, pretium non magna. Sed rutrum tortor
-                    eu magna rhoncus, nec egestas tellus faucibus. Aliquam nulla
-                    leo, egestas sed convallis efficitur, mattis a ante. Ut
-                    tempus aliquet tincidunt. Phasellus sit amet nunc vitae quam
-                    luctus congue nec non ligula. Integer feugiat aliquam nulla,
-                    ac eleifend orci porta et. Aliquam facilisis laoreet varius.
-                    Vivamus eleifend, dui at mattis bibendum, enim ante suscipit
-                    urna, et feugiat sapien nisl at turpis. Aenean velit diam,
-                    molestie non eros eu, hendrerit tincidunt nunc. Nunc ipsum
-                    nunc, luctus eget massa in, tristique vulputate nisi. Nunc
-                    vestibulum sollicitudin nibh sed vehicula. Integer fermentum
-                    nibh sit amet est faucibus iaculis. Vestibulum mi eros,
-                    commodo sit amet varius a, suscipit ultrices erat. Proin
-                    hendrerit sapien vel mauris pretium, at tristique tortor
-                    tristique. Sed mattis aliquet ipsum, id tempus tortor
-                    aliquam nec. Nam elementum imperdiet elementum. Mauris
-                    suscipit odio ut dolor porta, quis pretium augue gravida.
-                    Phasellus leo magna, luctus vel massa rhoncus, tincidunt
-                    faucibus purus. Nam blandit iaculis massa, mattis
-                    ullamcorper sapien venenatis non. Proin aliquet lacinia
-                    eros, ac iaculis est fringilla eu. Etiam eu nunc nec dui
-                    gravida tincidunt. Ut porta risus a ornare rhoncus. Integer
-                    dictum mi a ex varius tincidunt. Etiam vitae ullamcorper
-                    neque. Vivamus imperdiet commodo rhoncus. Quisque id rhoncus
-                    justo. Donec elementum ornare magna, eu accumsan urna
-                    efficitur vitae. Curabitur nec venenatis enim. Curabitur
-                    interdum libero quis justo scelerisque, facilisis porttitor
-                    lacus bibendum. Integer eu augue lacus. Suspendisse potenti.
-                    Curabitur varius nunc lobortis sapien posuere, non aliquam
-                    turpis consequat. Curabitur at nisi at ligula posuere
-                    tincidunt. Nullam justo metus, lacinia et arcu nec, interdum
-                    vestibulum libero.
+                  {/* Post Description */}
+                  <p className="mt-2 p-8">
+                    {updateMode ? (
+                      <textarea
+                        className="singlePagePostDescriptionUpdate"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                      ></textarea>
+                    ) : (
+                      <p className="singlePagePostDescription">
+                        {post.description}
+                      </p>
+                    )}
                   </p>
                 </div>
               </div>
+
+              {/* Button Post */}
+              {updateMode ? (
+                <button onClick={handleUpdate}> Post </button>
+              ) : (
+                <div></div>
+              )}
             </div>
           </div>
           <div className="basis-1/3 max-w-4xl px-10 py-16 mx-auto px-0 px-8 mx-auto sm:px-12 xl:px-5">

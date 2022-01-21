@@ -6,7 +6,27 @@ import News from "../../components/News";
 import CarouselCard from "../../components/CarouselCard";
 import { Link } from "react-router-dom";
 
+import React, { useEffect, useState } from "react";
+import axios from "axios"
+import { useLocation } from "react-router-dom";
+
 export default function Home() {
+   //!Axios Connect FrontendBackend - All Posts - Connect postRoutes /api/posts/:
+   const [posts, setPosts] = useState([]);
+
+   const {search} = useLocation();
+
+   useEffect(() => {
+       const fetchPosts = async() => {
+           const res = await axios.get("/posts" + search)
+           setPosts(res.data);
+       }
+       fetchPosts();
+       
+   }, [search]);
+
+
+
   return (
     <MainLayout>
       <div className="flex flex-row p-10 ">
@@ -14,9 +34,9 @@ export default function Home() {
           <Sidebar />
         </div>
         <div className="basis-2/3 ">
-          <News />
+          <News/>
           {/* <CarouselCard /> */}
-          <ListPost />
+          <ListPost posts={posts} />
         </div>
         <div className="basis-1/6 hidden md:block items-center justify-center">
           <Link

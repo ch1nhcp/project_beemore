@@ -1,6 +1,45 @@
 import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState, useRef, useContext } from "react";
+import { Context } from "../../context/Context";
 
 export default function Login() {
+  //!Axios Connect FrontendBackend - Auth Login - Connect authRoutes /api/auth/login:
+  const accountRef = useRef(); //dùng lưu 1 lần vào DOM thật
+  const passwordRef = useRef();
+
+  //!Context API:
+  const { dispatch, isFetching } = useContext(Context);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  //!handleSubmit:
+  const handleSubmit = async (e) => {
+    dispatch({ type: "LOGIN_START" });
+
+    try {
+      e.preventDefault();
+
+      const res = await axios.post("/auth/login", {
+        // /api/auth/login
+        account: accountRef.current.value,
+        password: passwordRef.current.value,
+      });
+
+      console.log(res);
+
+      //!token JWT:
+      const token = res.data.access_token;
+      console.log(res.data.access_token);
+      localStorage.setItem("token", token);
+
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+
+      window.location.replace("/");
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAIL" });
+    }
+  };
+
   return (
     <>
       <section className="h-full content-center ">
@@ -23,7 +62,7 @@ export default function Login() {
             <h1 className="mb-5 text-xl font-light text-left text-gray-800 sm:text-center">
               Log in to your account
             </h1>
-            <form className="pb-1 space-y-4">
+            <form className="pb-1 space-y-4" onSubmit={handleSubmit}>
               <label className="block">
                 <span className="block mb-1 text-xs font-medium text-gray-700">
                   Your Email
@@ -34,6 +73,7 @@ export default function Login() {
                   placeholder="Ex. james@bond.com"
                   inputmode="email"
                   required
+                  ref={accountRef}
                 />
               </label>
               <label className="block">
@@ -45,6 +85,7 @@ export default function Login() {
                   type="password"
                   placeholder="••••••••"
                   required
+                  ref={passwordRef}
                 />
               </label>
 
