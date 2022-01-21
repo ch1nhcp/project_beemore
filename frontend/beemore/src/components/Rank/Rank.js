@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState, useContext } from "react";
+import { Context } from "../../context/Context";
 
 export default function Rank() {
+  const { state, dispatch, user } = useContext(Context);
+
   return (
     <>
       <div className="max-w-2xl mx-auto">
@@ -16,7 +20,7 @@ export default function Rank() {
               className="divide-y divide-gray-200 dark:divide-gray-700"
             >
               <li className="py-3 sm:py-4">
-                <Link to="/user" className="flex items-center space-x-4">
+                <Link to={`/user/`} className="flex items-center space-x-4">
                   <div className="flex-shrink-0">
                     <img
                       className="w-8 h-8 rounded-full"

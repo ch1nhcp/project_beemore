@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Context } from "../../context/Context";
+import axios from "axios";
 
 export default function Navbar() {
+  //!LogIn LogOut - Phiên đăng nhập - userModel:
+  const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/";
+
+  const handleOut = () => {
+    localStorage.removeItem("token");
+    dispatch({ type: "LOGOUT" });
+  };
+
   return (
     <>
       <header class="text-gray-600 body-font shadow">
@@ -32,20 +44,48 @@ export default function Navbar() {
             </Link>
           </nav>
           <div className="inline-flex items-center  py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
-            <div className="flex items-center py-2 -mx-1 md:mx-0">
-              <Link
-                to="/login"
-                className="block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-blue-500 transition-colors duration-200 transform rounded-md hover:bg-blue-600 hover:text-white md:mx-2 md:w-auto"
-              >
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className="block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 md:mx-0 md:w-auto"
-              >
-                Join free
-              </Link>
-            </div>
+            {user ? (
+              <div className="inline-flex items-center  py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
+                <div class="avatar online">
+                  {/* Profile */}
+                  <Link to={`/user/${user.user._id}`} className="link">
+                    <div class="rounded-full w-10 h-10">
+                      {user.user.picture == "" ? (
+                        <img
+                          src="https://source.unsplash.com/random/100x100"
+                          alt=""
+                        />
+                      ) : (
+                        <img src={PF + user.user.picture} alt="" />
+                      )}
+                    </div>
+                  </Link>
+                </div>
+
+                <div
+                  className="flex items-center py-2 -mx-1 md:mx-0 block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-blue-500 transition-colors duration-200 transform rounded-md hover:bg-blue-600 hover:text-white md:mx-2 md:w-auto"
+                  onClick={handleOut}
+                >
+                  LOG OUT
+                </div>
+              </div>
+            ) : (
+              <div className="flex items-center py-2 -mx-1 md:mx-0">
+                <Link
+                  to="/login"
+                  className="block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-blue-500 transition-colors duration-200 transform rounded-md hover:bg-blue-600 hover:text-white md:mx-2 md:w-auto"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  className="block w-1/2 px-3 py-2 mx-1 text-md font-medium leading-5 text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 md:mx-0 md:w-auto"
+                >
+                  Join free
+                </Link>
+              </div>
+            )}
+
             {/* Show when login successfully */}
             {/* <div className="inline-flex items-center  py-1 px-3 focus:outline-none  rounded text-base mt-4 md:mt-0">
               <div class="avatar online">

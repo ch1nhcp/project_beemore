@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function NotFound() {
   return (
     <MainLayout>
-      <main class="bg-white relative overflow-hidden h-screen relative">
+      <main class="bg-white overflow-hidden h-screen relative">
         <header class="absolute top-0 left-0 right-0 z-20">
           <nav class="container mx-auto px-6 md:px-12 py-4">
             <div class="md:flex justify-between items-center">
@@ -44,7 +44,10 @@ export default function NotFound() {
               </button>
             </div>
             <div class="block w-full mx-auto md:mt-0 relative max-w-md lg:max-w-2xl">
-              <img src="https://www.tailwind-kit.com/images/illustrations/1.svg" />
+              <img
+                src="https://www.tailwind-kit.com/images/illustrations/1.svg"
+                alt="404"
+              />
             </div>
           </div>
         </div>

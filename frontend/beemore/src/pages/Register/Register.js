@@ -1,6 +1,32 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios, { Axios } from "axios";
 
 export default function Register() {
+  //!Axios Connect FrontendBackend - Auth Register - Connect authRoutes /api/auth/register:
+  const [username, setUsername] = useState("");
+  const [account, setAccount] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); //ngăn load trang
+    setError(false);
+
+    try {
+      const res = await axios.post("/auth/register", {
+        // /api/auth/register
+        username: username,
+        account: account,
+        password: password,
+      });
+
+      // Đăng ký thành công sẽ replace sang /login:
+      res.data && window.location.replace("/login"); // /api/auth/login
+    } catch (err) {
+      setError(true);
+    }
+  };
   return (
     <>
       <section class="px-4 pb-24 mx-auto max-w-7xl">
@@ -9,7 +35,9 @@ export default function Register() {
             <span class=" text-xl font-medium text-center text-amber-400 md:text-5xl">
               Bee
             </span>
-            <span  class=" text-xl font-medium text-center text-gray-600 md:text-5xl">more</span>
+            <span class=" text-xl font-medium text-center text-gray-600 md:text-5xl">
+              more
+            </span>
             <span class="sr-only">Beemore Home Page</span>
           </a>
         </header>
@@ -23,7 +51,7 @@ export default function Register() {
               &nbsp;Sign in
             </Link>
           </p>
-          <form class="mt-8 space-y-4">
+          <form class="mt-8 space-y-4" onSubmit={handleSubmit}>
             <label class="block">
               <span class="block mb-1 text-xs font-medium text-gray-700">
                 Name
@@ -33,6 +61,7 @@ export default function Register() {
                 type="text"
                 placeholder="Your full name"
                 required
+                onChange={(e) => setUsername(e.target.value)}
               />
             </label>
             <label class="block">
@@ -45,6 +74,7 @@ export default function Register() {
                 placeholder="Ex. james@bond.com"
                 inputmode="email"
                 required
+                onChange={(e) => setAccount(e.target.value)}
               />
             </label>
             <label class="block">
@@ -56,6 +86,7 @@ export default function Register() {
                 type="password"
                 placeholder="••••••••"
                 required
+                onChange={(e) => setPassword(e.target.value)}
               />
             </label>
             <input
