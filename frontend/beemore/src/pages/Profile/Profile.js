@@ -7,9 +7,6 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 
 export default function About() {
-  // const location = useLocation();
-  // const path = location.pathname.split("/")[2];
-
   const { state, dispatch, user } = useContext(Context);
   const [username, setUsername] = useState();
   const [picture, setPicture] = useState();
@@ -46,12 +43,8 @@ export default function About() {
         "&followingId=" +
         params.userId
     );
-    //localhost:5000/api/users/follow?selfId= .....&followingId=...
 
-    // let updatedUser = { ...user.user };
-    // updatedUser.following.push(params.userId);
-    // const action = { type: "CURRENT_USER", payload: updatedUser };
-    // dispatch(state, action);
+    dispatch({ type: "ADD_FOLLOW", payload: params.userId });
   };
 
   return (
@@ -63,19 +56,26 @@ export default function About() {
 
         <img
           alt="profile"
-          src={PF + background}
+          src="https://source.unsplash.com/random/1000x1000"
           class="object-cover h-60 w-full "
         />
 
         {/* userModel picture */}
         <div class="flex flex-col items-center justify-center p-4 -mt-16">
-          <img
-            alt="profil"
-            src={PF + picture}
-            class="mx-auto object-cover rounded-full border-2 border-white dark:border-gray-800"
-            width="150px"
-            height="150px"
-          />
+          {user.user.picture == "" ? (
+            <img
+              class="rounded-full w-24 h-24"
+              src="https://source.unsplash.com/random/100x100"
+              alt=""
+            />
+          ) : (
+            <img
+              alt="profile"
+              src={PF + picture}
+              class="rounded-full w-24 h-24"
+            />
+          )}
+
           <i class="fas fa-edit"></i>
 
           {/* userModel username */}
@@ -141,6 +141,7 @@ export default function About() {
             </div>
           </div>
           <div class="flex items-center justify-between gap-4 mt-6">
+            {/* check follow */}
             {user.user._id ===
             params.userId ? null : user.user.following.includes(
                 params.userId
@@ -160,23 +161,30 @@ export default function About() {
                 Follow
               </button>
             )}
+            {user.user._id === params.userId && (
+              <button
+                type="button"
+                class="px-4 py-2 text-base border rounded-lg text-white bg-indigo-500 hover:bg-indigo-700 "
+                onClick={handleFollow}
+              >
+                <Link to="/add">Create Post</Link>
+              </button>
+            )}
           </div>
         </div>
       </div>
 
       {/* List Post */}
 
-      <section className="bg-coolGray-100 text-coolGray-800">
-        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12"></div>
-        {posts.map((item, index) => (
-          <div
-            className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12"
-            key={index}
-          >
-            <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="bg-coolGray-100 text-coolGray-800 ">
+        <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
+          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map((item, id) => (
               <Link
                 to={"/post/" + item._id}
-                className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-coolGray-50"
+                className="max-w-sm mx-auto group hover:no-underline focus:no-underline bg-coolGray-50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform duration-200 text-ellipsis overflow-hidden "
+                height="40px"
+                key={id}
               >
                 <img
                   role="presentation"
@@ -191,17 +199,14 @@ export default function About() {
                   <span className="text-xs text-coolGray-600">
                     {item.createdAt}
                   </span>
-                  <p>{item.description}</p>
+                  <p className="overflow-hidden" height="40px">
+                    {item.description}
+                  </p>
                 </div>
               </Link>
-            </div>
-            <div className="flex justify-center">
-              <button className="px-6 py-3 text-sm rounded-md hover:underline bg-coolGray-50 text-coolGray-600">
-                {posts.length > 6 && "Load more posts..."}
-              </button>
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </section>
     </>
   );

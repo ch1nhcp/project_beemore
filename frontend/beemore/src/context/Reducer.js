@@ -62,6 +62,22 @@ const Reducer = (state, action) => {
                 ...state,
                 posts: state.posts.filter((post) => post._id !== action.payload._id),
             };
+        
+        case "ADD_FOLLOW": {
+            const willFollowUser = action.payload;
+
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    user: {
+                        ...state.user,
+                        following: [...state.user.user.following, willFollowUser] 
+                    }
+
+                }
+            }
+        }
             
         default:
             return state;

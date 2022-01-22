@@ -139,12 +139,12 @@ export default function PostDetail() {
                     onChange={(e) => setTitle(e.target.value)}
                   ></input>
                 ) : (
-                  <a
-                    href="#"
+                  <Link
+                    to={`/?title=${post.title}`}
                     className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-black-500  hover:underline"
                   >
                     {post.title}
-                  </a>
+                  </Link>
                 )}
 
                 <div className="flex justify-start items-center mt-2">
@@ -165,7 +165,10 @@ export default function PostDetail() {
 
                     {/* Post Author */}
                     <Link to={`/user/${authorId}`} className="link">
-                      <small className="font-bold text-gray-700 hover:underline">
+                      <small
+                        className="font-bold text-gray-700 hover:underline"
+                        style={{ fontSize: "30px" }}
+                      >
                         {authorName}
                       </small>
                     </Link>
@@ -176,11 +179,16 @@ export default function PostDetail() {
                         <i
                           className="singlePagePostIcon fas fa-edit"
                           onClick={() => setUpdateMode(true)}
-                        > Update</i>
+                        >
+                          {" "}
+                          Update
+                        </i>
                         <i
                           className="singlePagePostIcon fas fa-trash-alt"
                           onClick={handleDelete}
-                        >Delete</i>
+                        >
+                          Delete
+                        </i>
                       </div>
                     )}
                   </a>
