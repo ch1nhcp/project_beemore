@@ -21,7 +21,7 @@ export default function PostDetail() {
   const [categories, setCategories] = useState("");
   const [authorId, setAuthorId] = useState("");
   const [authorName, setAuthorName] = useState("");
-
+  const [authorPicture, setAuthorPicture] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
 
   //hieutm
@@ -79,6 +79,7 @@ export default function PostDetail() {
       setCategories(res.data._doc.categories);
       setAuthorId(res.data._doc.postedBy);
       setAuthorName(res.data.username);
+      setAuthorPicture(res.data.picture);
       console.log(res.data);
     };
     getPost();
@@ -226,7 +227,7 @@ export default function PostDetail() {
                   <a href="#" className="flex items-center mt-6 mb-6">
                     {/* Post Author picture */}
                     <img
-                      src={post.postedBy}
+                      src={PF + authorPicture}
                       alt="avatar"
                       className="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block"
                     />
