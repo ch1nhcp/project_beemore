@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import ScrollIndicator from "../../components/ScrollIndicator";
 import { Comment, ListComment } from "../../components/Comment";
+import NewArticle from "./NewArticle";
+import request from "../../api/request";
 
 export default function PostDetail() {
   //!Axios Connect FrontendBackend - One Post - Connect /post from Post.jsx Link to={`/post/${post._id}`}:
@@ -30,6 +32,35 @@ export default function PostDetail() {
   };
   //hieutm
 
+  //HieuTM
+  const [status, setStatus] = React.useState("idle");
+  const [postsNew, setPostsNew] = React.useState([]);
+  const getNewPost = async () => {
+    try {
+      setStatus("loading");
+      const res = await request({
+        method: "GET",
+        url: `/posts/limit`,
+      });
+      if (res && res.success) {
+        const data = res.data;
+        console.log(data);
+        setStatus("done");
+        setPostsNew(data);
+        return;
+      }
+      setStatus("error");
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
+  React.useEffect(() => {
+    getNewPost();
+  }, []);
+
+  //HieuTM
+
   const PF = "http://localhost:5000/images/";
 
   const [socket, setSocket] = useState(null);
@@ -48,7 +79,6 @@ export default function PostDetail() {
       setCategories(res.data._doc.categories);
       setAuthorId(res.data._doc.postedBy);
       setAuthorName(res.data.username);
-
       console.log(res.data);
     };
     getPost();
@@ -96,6 +126,44 @@ export default function PostDetail() {
     window.scrollTo(0, 0);
   }, []);
 
+  const renderNew = () => {
+    if (status === "error") return <div>Error</div>;
+
+    if (status === "idle" || status === "loading") return <div>Loading...</div>;
+    return (
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mt-12 mb-12">
+        <article>
+          <section class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
+            {postsNew.map((item) => (
+              <NewArticle data={item} />
+
+              //   <div className="flex flex-col items-start col-span-12 overflow-hidden shadow-sm rounded-xl md:col-span-6 lg:col-span-4">
+
+              //     <Link to={`/post/${item._id}`}>
+              //     <img
+              //       className="object-cover w-full shadow-sm h-full"
+              //       src={PF+item.photo}
+              //     />
+              //     </Link>
+              //   <div className="relative flex flex-col items-start px-6 bg-white border border-t-0 border-gray-200 py-7 rounded-b-2xl">
+              //     <div className="bg-indigo-400 absolute top-0 -mt-3 flex items-center px-3 py-1.5 leading-none w-auto inline-block rounded-full text-xs font-medium uppercase text-white inline-block">
+              //       <span>{item.categories}</span>
+              //     </div>
+              //     <h2 className="text-base text-gray-500 font-bold sm:text-lg md:text-xl">
+              //     <Link to={`/post/${item._id}`}>
+              //       {item.title}
+              //     </Link>
+
+              //     </h2>
+              //   </div>
+              // </div>
+            ))}
+          </section>
+        </article>
+      </section>
+    );
+  };
+
   return (
     <MainLayout>
       <ScrollIndicator>
@@ -139,12 +207,12 @@ export default function PostDetail() {
                     onChange={(e) => setTitle(e.target.value)}
                   ></input>
                 ) : (
-                  <Link
-                    to={`/?title=${post.title}`}
+                  <a
+                    href="#"
                     className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-black-500  hover:underline"
                   >
                     {post.title}
-                  </Link>
+                  </a>
                 )}
 
                 <div className="flex justify-start items-center mt-2">
@@ -165,28 +233,54 @@ export default function PostDetail() {
 
                     {/* Post Author */}
                     <Link to={`/user/${authorId}`} className="link">
-                      <small
-                        className="font-bold text-gray-700 hover:underline"
-                        style={{ fontSize: "30px" }}
-                      >
+                      <small className="font-bold text-gray-700 text-2xl hover:underline">
                         {authorName}
                       </small>
                     </Link>
 
                     {/* Post Icon Update Delete */}
                     {post.postedBy === user?.user._id && (
-                      <div className="singlePagePostEdit">
+                      <div className="singlePagePostEdit flex ml-3">
                         <i
-                          className="singlePagePostIcon fas fa-edit"
+                          className="singlePagePostIcon"
                           onClick={() => setUpdateMode(true)}
                         >
-                          {" "}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path>
+                            <polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon>
+                          </svg>
                           Update
                         </i>
                         <i
-                          className="singlePagePostIcon fas fa-trash-alt"
+                          className="singlePagePostIcon ml-3"
                           onClick={handleDelete}
                         >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                          </svg>
                           Delete
                         </i>
                       </div>
@@ -246,81 +340,7 @@ export default function PostDetail() {
             <h2 className="text-2xl mt-4 text-gray-500 font-bold text-center">
               Related Posts
             </h2>
-            <div className="flex grid h-full grid-cols-12 gap-10 pb-10 mt-8 sm:mt-16">
-              <div className="grid grid-cols-12 col-span-12 gap-7">
-                <div className="flex flex-col items-start col-span-12 overflow-hidden shadow-sm rounded-xl md:col-span-6 lg:col-span-4">
-                  <a
-                    href="#_"
-                    className="block transition duration-200 ease-out transform hover:scale-110"
-                  >
-                    <img
-                      className="object-cover w-full shadow-sm h-full"
-                      src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
-                    />
-                  </a>
-                  <div className="relative flex flex-col items-start px-6 bg-white border border-t-0 border-gray-200 py-7 rounded-b-2xl">
-                    <div className="bg-indigo-400 absolute top-0 -mt-3 flex items-center px-3 py-1.5 leading-none w-auto inline-block rounded-full text-xs font-medium uppercase text-white inline-block">
-                      <span>Flask</span>
-                    </div>
-                    <h2 className="text-base text-gray-500 font-bold sm:text-lg md:text-xl">
-                      <a href="#_">
-                        Oauth using facebook with flask,mysql,vuejs and tailwind
-                        css
-                      </a>
-                    </h2>
-                    {/* <!-- <p className="mt-2 text-sm text-gray-500">Learn how to authenticate users to your application using facebook.</p> --> */}
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-start col-span-12 overflow-hidden shadow-sm rounded-xl md:col-span-6 lg:col-span-4">
-                  <a
-                    href="#_"
-                    className="block transition duration-200 ease-out transform hover:scale-110"
-                  >
-                    <img
-                      className="object-cover w-full shadow-sm h-full"
-                      src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
-                    />
-                  </a>
-                  <div className="relative flex flex-col items-start px-6 bg-white border border-t-0 border-gray-200 py-7 rounded-b-2xl">
-                    <div className="bg-red-400 absolute top-0 -mt-3 flex items-center px-3 py-1.5 leading-none w-auto inline-block rounded-full text-xs font-medium uppercase text-white inline-block">
-                      <span>Django</span>
-                    </div>
-                    <h2 className="text-base text-gray-500 font-bold sm:text-lg md:text-xl">
-                      <a href="#_">
-                        Authenticating users with email verification in Django
-                        apps
-                      </a>
-                    </h2>
-                    {/* <!-- <p className="mt-2 text-sm text-gray-500">Learn how to authenticate users to your web application by sending secure links to their email box.</p> --> */}
-                  </div>
-                </div>
-
-                <div className="flex flex-col items-start col-span-12 overflow-hidden shadow-sm rounded-xl md:col-span-6 lg:col-span-4">
-                  <a
-                    href="#_"
-                    className="block transition duration-200 ease-out transform hover:scale-110"
-                  >
-                    <img
-                      className="object-cover w-full shadow-sm h-full"
-                      src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80"
-                    />
-                  </a>
-                  <div className="relative flex flex-col items-start px-6 bg-white border border-t-0 border-gray-200 py-7 rounded-b-2xl">
-                    <div className="bg-purple-500 absolute top-0 -mt-3 flex items-center px-3 py-1.5 leading-none w-auto inline-block rounded-full text-xs font-medium uppercase text-white inline-block">
-                      <span>Flask</span>
-                    </div>
-                    <h2 className="text-base text-gray-500 font-bold sm:text-lg md:text-xl">
-                      <a href="#_">
-                        Creating user registration and authentication system in
-                        flask
-                      </a>
-                    </h2>
-                    {/* <!-- <p className="mt-2 text-sm text-gray-500">Learn how to authenticate users to your application using flask and mysql db.</p> --> */}
-                  </div>
-                </div>
-              </div>
-            </div>
+            {renderNew()}
 
             {/* <!--form form comments--> */}
           </div>
