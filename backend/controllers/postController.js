@@ -186,6 +186,18 @@ const reviews = async (req, res) => {
   }
 };
 
+const getThreePost = async (req, res) => {
+  try {
+    const getPost = await postModel.find().sort({ _id: -1 }).limit(4);
+    res.send({
+      success: 1,
+      data: getPost,
+    });
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+};
+
 //export:
 module.exports = {
   createPost,
@@ -195,4 +207,5 @@ module.exports = {
   getAllPosts,
   likePost,
   reviews,
+  getThreePost,
 };
