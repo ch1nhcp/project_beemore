@@ -40,7 +40,7 @@ export default function PostDetail() {
       setStatus("loading");
       const res = await request({
         method: "GET",
-        url: `/posts/limit`,
+        url: `/posts/limit/abc`,
       });
       if (res && res.success) {
         const data = res.data;

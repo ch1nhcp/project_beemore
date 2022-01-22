@@ -20,8 +20,7 @@ router.get("/:id", postController.getPost);
 
 router.get("/", postController.getAllPosts);
 
-router.get("/limit", postController.getThreePost);
-
+router.get("/limit/abc", postController.getThreePost);
 router.patch("/:id", postController.reviews);
 
 //export:
